@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-left">
+    <p><h2>通过刷新页面观察缓存时间</h2></p>
+    <p>
+        <cache expires-on="@new DateTime(2030,1,1,18,0,0)">
+            expires-on(2030-01-01 18:00)：缓存标记帮助程序中缓存的时间: @DateTime.Now
+        </cache>
+    </p>
+    <p>
+        <cache expires-after="@TimeSpan.FromSeconds(2)">
+            expires-after(2s)：缓存标记帮助程序中缓存的时间: @DateTime.Now
+        </cache>
+    </p>
+    <p>
+        <cache expires-sliding="@TimeSpan.FromSeconds(10)">
+            expires-sliding(10s)：缓存标记帮助程序中缓存的时间: @DateTime.Now
+        </cache>
+    </p>
+    <p>
+        @{
+            var ContentType = this.ViewContext.HttpContext.Request.Headers["Content-Type"].ToString();
+        }
+        <cache vary-by="@ContentType">
+            vary-by(ContentType)：缓存标记帮助程序中缓存的时间: @DateTime.Now
+        </cache>
+    </p>
+    <p>
+        <cache vary-by-header="Content-Type">
+            vary-by-header(Content-Type)缓存标记帮助程序中缓存的时间: @DateTime.Now
+        </cache>
+    </p>
+</div>

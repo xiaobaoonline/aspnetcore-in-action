@@ -1,0 +1,27 @@
+﻿@page
+@model Chapter07_Samples.Pages.AntiForgeryDemoModel
+@{
+}
+<!-- chapter7.8 -->
+<!--
+<form method="post" action="/AntiForgery">
+
+    Name:
+    <input asp-for="Customer.Name" />
+    <input type="submit" />
+</form>
+-->
+
+<form method="post"  action="/AntiForgeryDemo">
+    <h2>启用防请求伪造的表单</h2>
+    Name:
+    <input asp-for="Customer.Name" />
+    <input type="submit" />
+    @Html.AntiForgeryToken()
+</form>
+<form method="post" action="/AntiForgeryDemo">
+    <h2>未启用防请求伪造的表单</h2>
+    Name:
+    <input asp-for="Customer.Name" />
+    <input type="submit" />
+</form>

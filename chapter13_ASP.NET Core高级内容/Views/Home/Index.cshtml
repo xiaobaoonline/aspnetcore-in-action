@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-left">
+    <h1 class="display-4">Welcome</h1>
+    <p>MySpecialFeature中的MyInfo：@ViewBag.MySpecialFeature.MyInfo</p>
+    <p>试试URL重写：<a href="/不存在的文件.txt">不存在的文件.txt</a></p>
+    <p>试试缓存：<a href="@Url.Action("CacheDemo")">缓存演示</a></p>
+</div>

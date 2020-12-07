@@ -1,0 +1,60 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+
+
+<input @bind="age" />
+
+
+<input @bind="age" @bind:event="oninput" @bind-title="age" @bind-title:event="onchange" />
+
+
+
+<input @bind="time" @bind:format="yyyy-MM-dd" />
+
+<ListTemplate Items="list">
+    <ListHeader>
+        <text>我的列表</text>
+    </ListHeader>
+    <RowTemplate>
+        <text>@context.Name</text>
+    </RowTemplate>
+</ListTemplate>
+
+<ListTemplate Items="list">
+    <ListHeader>
+        <text>我的列表</text>
+    </ListHeader>
+    <RowTemplate Context="dataModel">
+        <text>@dataModel.Name</text>
+    </RowTemplate>
+</ListTemplate>
+
+<MyList Items="list">
+    <ListHeader>
+        <text>我的列表组件</text>
+    </ListHeader>
+    <RowTemplate Context="dataModel">
+        <text>@dataModel.Name</text>
+    </RowTemplate>
+</MyList>
+
+
+@code{
+    int age = 20;
+    DateTime time = new DateTime();
+    List<DataModel> list = new List<DataModel>
+{
+        new DataModel{ Name = "张三" },
+        new DataModel{ Name = "李四"}
+    };
+    class DataModel
+    {
+        public string Name { get; set; }
+    }
+}

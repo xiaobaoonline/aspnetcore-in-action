@@ -1,0 +1,23 @@
+﻿@model ViewModels.Article
+
+<h2>@Model.Title</h2>
+@* 把作者的名字传给 Views\Shared\_AuthorPartial.cshtml *@
+@await Html.PartialAsync("_AuthorPartial", Model.AuthorName)
+@Model.PublicationDate
+
+@* 循环视图模型，并组装新的ViewData传给 Views\Articles\_ArticleSection.cshtml. *@
+@{
+    var index = 0;
+
+    foreach (var section in Model.Sections)
+    {
+        await Html.PartialAsync("_ArticleSection",
+                                section,
+                                new ViewDataDictionary(ViewData)
+                                {
+                                    { "index", index }
+                                        });
+
+        index++;
+    }
+}

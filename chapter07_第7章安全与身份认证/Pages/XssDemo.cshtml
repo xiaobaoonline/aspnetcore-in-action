@@ -1,0 +1,12 @@
+﻿@page
+@model Chapter07_Samples.Pages.XssDemoModel
+@using System.Text.Encodings.Web;
+@inject HtmlEncoder encoder;
+
+@{
+    var untrustedInput = "<script>alert('恶作剧')</script>";
+}
+
+<div>
+@encoder.Encode(untrustedInput)
+</div>

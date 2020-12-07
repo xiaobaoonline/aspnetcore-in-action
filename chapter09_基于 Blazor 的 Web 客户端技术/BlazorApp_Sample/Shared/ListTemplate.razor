@@ -1,0 +1,20 @@
+﻿@typeparam TItem
+
+<h3>@ListHeader</h3>
+<ul>
+    @foreach (var item in Items)
+    {
+        <li>@RowTemplate(item)</li>
+    }
+</ul>
+
+@code {
+    [Parameter]
+    public RenderFragment ListHeader { get; set; }
+
+    [Parameter]
+    public RenderFragment<TItem> RowTemplate { get; set; }
+
+    [Parameter]
+    public IReadOnlyList<TItem> Items { get; set; }
+}

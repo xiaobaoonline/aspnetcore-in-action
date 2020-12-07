@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Configuration_Sample1": {
+      "commandName": "Project",
+      "commandLineArgs": "-k1=value1 key3=value2 -k2=value22",
+      "environmentVariables": {
+        "Key1": "Value1",
+        "Section1__Key1": "Value11",
+        "MyEnv_Key1": "MyEnv Value1",
+        "MyEnv_Section1__Key1": "MyEnv Value11"
+      }
+    }
+  }
+}

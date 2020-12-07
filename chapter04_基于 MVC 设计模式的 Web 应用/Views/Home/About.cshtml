@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "关于我们";
+    ViewData["Description"] = "页面用于描述应用的相关信息";
+}
+
+@{
+    ViewData["Title"] = "About";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@ViewBag.Description">
+</head>
+<body>
+    <h2>@ViewData["Title"].</h2>
+    <h3>@ViewData["Message"]</h3>
+
+    <p>Use this area to provide additional information.</p>
+    <h1>@Model.Title</h1>
+</body>
+</html>

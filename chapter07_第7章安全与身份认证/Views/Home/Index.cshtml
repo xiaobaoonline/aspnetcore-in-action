@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-left">
+    <h1 class="display-4">Welcome</h1>
+    <p>
+        <ol>
+            <li>
+                身份认证和授权：<br />
+                <a href="AuthenticationAndAuthorization">未携带认证信息</a> <br />
+                <a href="AuthenticationAndAuthorization?password=admin">携带认证信息</a> <br />
+            </li>
+            <li>
+                数据保护：<br />
+                <a href="DataProtection?input=helloworld">加密helloworld</a> <br />
+            </li>
+
+            <li>
+                反请求伪造：<br />
+                <a href="AntiForgeryDemo?input=helloworld">演示表单</a> <br />
+            </li>
+
+            <li>
+                防跨站脚本攻击：<br />
+                <a href="XssDemo">输出用户提交内容</a> <br />
+            </li>
+        </ol>
+    </p>
+</div>

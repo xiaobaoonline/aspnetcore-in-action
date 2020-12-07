@@ -1,0 +1,20 @@
+﻿@using ViewModels
+@{
+    var person = ViewData["Person"] as Person;
+}
+
+@ViewData["Greeting"] World!
+
+<address>
+    @person.Name<br>
+    @person.Phone<br>
+    @person.Province, @person.City @person.Address
+</address>
+
+@ViewBag.Greeting World!
+
+<address>
+    @ViewBag.Person.Name<br>
+    @ViewBag.Person.Phone<br>
+    @ViewBag.Person.Province, @ViewBag.Person.City @ViewBag.Person.Address
+</address>
